@@ -1,0 +1,4 @@
+---
+# Onyx is currently deployed through Docker, so we have nothing to do in
+# this role. Keeping it around in case we'd like to do any machine-level
+# set up down the road.
