@@ -1,2 +1,4 @@
 ---
-# defaults file for engraver-onyx
+file_deploy: no
+onyx_path: /srv/onyx
+onyx_image_file: onyx.tar.gz
