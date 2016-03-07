@@ -8,6 +8,8 @@
     state: reloaded
     restart_policy: always
     restart_policy_retry: 128
+    privileged: yes
     env:
       NPEERS: "{{ onyx_n_peers }}"
       ONYX_ID: "{{ onyx_tenancy_id }}"
+      BIND_ADDR: "{{ inventory_hostname }}"
