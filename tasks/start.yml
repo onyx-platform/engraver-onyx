@@ -12,4 +12,4 @@
     env:
       NPEERS: "{{ onyx_n_peers }}"
       ONYX_ID: "{{ onyx_tenancy_id }}"
-      BIND_ADDR: "{{ inventory_hostname }}"
+      BIND_ADDR: "{{ private_ip }}"
