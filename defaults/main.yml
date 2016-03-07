@@ -1,2 +1,3 @@
 ---
 deploy: no
+peer_java_opts: ""

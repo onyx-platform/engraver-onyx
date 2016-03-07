@@ -13,3 +13,4 @@
       NPEERS: "{{ onyx_n_peers }}"
       ONYX_ID: "{{ onyx_tenancy_id }}"
       BIND_ADDR: "{{ private_ip }}"
+      PEER_JAVA_OPTS: "{{ peer_java_opts }}"
