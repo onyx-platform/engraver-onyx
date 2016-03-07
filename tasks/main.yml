@@ -1,4 +1,4 @@
 ---
 
-- include: file_deploy.yml
-  when: file_deploy
+- include: start.yml
+  when: deploy
