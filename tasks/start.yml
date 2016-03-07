@@ -8,6 +8,3 @@
     state: reloaded
     restart_policy: always
     restart_policy_retry: 128
-
-- name: Wait for Onyx to come up
-  wait_for: port="{{ onyx_port }}" delay=0 timeout=60
