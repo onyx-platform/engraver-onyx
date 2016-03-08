@@ -1,3 +1,4 @@
 ---
+container_name: onyx
 deploy: no
 peer_java_opts: ""

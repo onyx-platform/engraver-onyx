@@ -1,7 +1,7 @@
 ---
 - name: Run the Onyx container
   docker:
-    name: onyx
+    name: "{{ container_name }}"
     image: "{{ onyx_docker_image }}"
     net: host
     detach: yes
