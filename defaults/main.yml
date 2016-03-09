@@ -11,3 +11,7 @@ service_security_rules:
     from_port: "{{ peer_host_port }}"
     to_port: "{{ peer_host_port }}"
     cidr_ip: "{{ onyx_subnet }}"
+
+service_dependencies:
+  - zookeeper
+  - bookkeeper
