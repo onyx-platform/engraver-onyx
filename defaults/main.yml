@@ -2,3 +2,9 @@
 container_name: onyx
 deploy: no
 peer_java_opts: ""
+
+peer_container_port: 40200
+peer_host_port: 40200
+
+service_ports:
+  - "{{ peer_host_port }}"
