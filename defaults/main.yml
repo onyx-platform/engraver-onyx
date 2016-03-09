@@ -10,4 +10,4 @@ service_security_rules:
   - proto: udp
     from_port: "{{ peer_host_port }}"
     to_port: "{{ peer_host_port }}"
-    cidr_ip: "0.0.0.0/0"
+    cidr_ip: "{{ onyx_subnet }}"
