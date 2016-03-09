@@ -1,7 +1,7 @@
 ---
 - name: Run the Onyx container
   docker:
-    name: "{{ container_name }}"
+    name: "{{ onyx_container_name }}"
     image: "{{ onyx_docker_image }}"
     detach: yes
     state: reloaded

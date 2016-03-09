@@ -1,5 +1,5 @@
 ---
-container_name: onyx
+onyx_container_name: onyx
 deploy: no
 peer_java_opts: ""
 
