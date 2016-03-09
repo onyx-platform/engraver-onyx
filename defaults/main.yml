@@ -2,3 +2,12 @@
 container_name: onyx
 deploy: no
 peer_java_opts: ""
+
+peer_container_port: 40200
+peer_host_port: 40200
+
+service_security_rules:
+  - proto: udp
+    from_port: "{{ peer_host_port }}"
+    to_port: "{{ peer_host_port }}"
+    cidr_ip: "0.0.0.0/0"

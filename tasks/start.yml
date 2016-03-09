@@ -3,15 +3,26 @@
   docker:
     name: "{{ container_name }}"
     image: "{{ onyx_docker_image }}"
-    net: host
     detach: yes
     state: reloaded
     restart_policy: always
     restart_policy_retry: 128
     privileged: yes
+    ports:
+      - "{{ peer_host_port }}:{{ peer_container_port }}"
     env:
       NPEERS: "{{ onyx_n_peers }}"
       ONYX_ID: "{{ onyx_tenancy_id }}"
       BIND_ADDR: "{{ private_ip }}"
       PEER_JAVA_OPTS: "{{ peer_java_opts }}"
       ZOOKEEPER: "{{ play_hosts | join(',') }}"
+
+- name: Wait for Onyx Peer to come up
+  wait_for:
+    host: "{{ inventory_hostname }}"
+    port: "{{ peer_host_port }}"
+    delay: 0
+    timeout: 60
+  delegate_to: "{{ item }}"
+  with_items:
+    - "{{ inventory_hostname }}"
