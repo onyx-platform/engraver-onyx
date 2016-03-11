@@ -29,10 +29,7 @@
     restart_policy: always
     restart_policy_retry: 128
     privileged: yes
-    ports:
-      - "{{ peer_host_port }}:{{ peer_container_port }}"
-    expose:
-      - "{{ peer_container_port }}"
+    net: host
     env:
       NPEERS: "{{ onyx_n_peers }}"
       ONYX_ID: "{{ onyx_tenancy_id }}"
