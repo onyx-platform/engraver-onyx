@@ -1,4 +1,25 @@
 ---
+- name: Find all the ZooKeeper machines
+  register: zk_machines
+  ec2_remote_facts:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
+    filters:
+      instance-state-name: running
+      dns_name: "{{ item }}"
+  with_items: "{{ groups['zookeeper'] }}"
+  run_once: yes
+  delegate_to: localhost
+
+- name: Bind the ZooKeeper private IPs
+  set_fact:
+    zk_addresses: "{{ zk_machines['results'] | map(attribute='instances') | list | private_addresses }}"
+
+- name: Export a ZooKeeper connection string for downstream use
+  set_fact:
+    zk_conn_str: "{{ (zk_addresses | join(':' ~ zookeeper_client_host_port ~ ',')) }}"
+
 - name: Run the Onyx container
   docker:
     name: "{{ onyx_container_name }}"
