@@ -40,13 +40,3 @@
       PEER_PORT: "{{ peer_host_port }}"
       PEER_JAVA_OPTS: "{{ peer_java_opts }}"
       ZK_CONN_STR: "{{ zk_conn_str }}"
-
-- name: Wait for Onyx Peer to come up
-  wait_for:
-    host: "{{ inventory_hostname }}"
-    port: "{{ peer_host_port }}"
-    delay: 0
-    timeout: 60
-  delegate_to: "{{ item }}"
-  with_items:
-    - "{{ inventory_hostname }}"
