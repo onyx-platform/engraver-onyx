@@ -1,8 +1,11 @@
 ---
 onyx_container_name: onyx
-deploy: no
-peer_java_opts: ""
 
+deploy: no
+submit: no
+kill: no
+
+peer_java_opts: ""
 peer_container_port: 40200
 peer_host_port: 40200
 

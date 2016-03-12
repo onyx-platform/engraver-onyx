@@ -2,3 +2,9 @@
 
 - include: start.yml
   when: deploy
+
+- include: submit.yml
+  when: submit
+
+- include: kill.yml
+  when: kill
