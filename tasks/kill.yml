@@ -1,4 +1,4 @@
 ---
-- name: Submit the job
+- name: Kill the job
   shell: "docker exec -it {{ onyx_container_name }} /srv/kill_job.sh {{ onyx_job_id }}"
   run_once: yes
